@@ -4,6 +4,7 @@ set noswapfile
 set nobackup
 set encoding=utf-8
 set clipboard=unnamedplus
+set mouse=a
 
 filetype off
 
@@ -15,7 +16,6 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'ctrlpvim/ctrlp.vim.git'
 Plugin 'rking/ag.vim.git'
 Plugin 'moll/vim-node.git'
-Plugin 'morhetz/gruvbox'
 Plugin 'rust-lang/rust.vim'
 Plugin 'racer-rust/vim-racer'
 Plugin 'fatih/vim-go'
@@ -29,12 +29,13 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'jacoborus/tender.vim'
 Plugin 'tomasr/molokai'
 Plugin 'artur-shaik/vim-javacomplete2'
+Plugin 'zivyangll/git-blame.vim'
 
 call vundle#end()
 filetype plugin indent on
 
 
-colorscheme gruvbox
+colorscheme industry
 set noerrorbells
 set vb t_vb=
 set background=dark
@@ -111,7 +112,7 @@ nnoremap <silent> <leader>fg :YcmCompleter FixIt<CR>
 
 
 nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
+nnoremap <Leader>s :<C-u>call gitblame#echo()<CR>
 
 "alias"
 let python='python3'
-
